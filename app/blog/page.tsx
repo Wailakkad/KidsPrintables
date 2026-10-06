@@ -187,7 +187,7 @@ export default function BlogIndexPage() {
                 externalIcon
                 className="w-full"
               >
-                Get the Fall Activity Pack ($7)
+                Get the Fall Activity Pack
               </CTAButton>
               <p className="text-[11px] text-[#5C554E] mt-2 text-center">
                 This is a digital download.

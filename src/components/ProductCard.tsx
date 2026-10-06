@@ -82,7 +82,7 @@ export function ProductCard({
               size="lg"
               externalIcon
             >
-              {ctaLabel} — {FALL_ACTIVITY_PACK.price}
+              {ctaLabel}
             </CTAButton>
             <div className="text-xs text-[#5C554E] leading-snug">
               <p className="font-medium text-[#1E1B18]">This is a digital download.</p>

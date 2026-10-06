@@ -129,7 +129,7 @@ export default function BlogPostPage({
               externalIcon
               className="w-full"
             >
-              Get the Fall Activity Pack ($7)
+              Get the Fall Activity Pack
             </CTAButton>
             <p className="text-[11px] text-[#5C554E] mt-2 text-center">
               This is a digital download.
@@ -294,7 +294,7 @@ export default function BlogPostPage({
                 size="lg"
                 externalIcon
               >
-                Get the Full 58-Page Pack — {FALL_ACTIVITY_PACK.price}
+                Get the Full 58-Page Pack
               </CTAButton>
               <span className="text-xs text-[#5C554E]">
                 This is a digital download. Instant PDF access after checkout.

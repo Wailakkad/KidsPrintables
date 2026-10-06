@@ -105,7 +105,7 @@ export function SamplePreviewModal({ isOpen, onClose }: SamplePreviewModalProps)
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-[#C85A17] text-white hover:bg-[#B04B0E] transition-colors min-h-[44px] whitespace-nowrap"
           >
-            <span>Get Full 58-Page Pack ($7)</span>
+            <span>Get Full 58-Page Pack</span>
             <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
           </a>
         </div>
