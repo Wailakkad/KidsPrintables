@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#FAF7F2"/>
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="#F3EFE6" stroke="#E6E0D4" stroke-width="2"/>
+  <!-- Decorative Autumn Leaves & Pumpkin -->
+  <circle cx="960" cy="315" r="160" fill="#C85A17" opacity="0.12"/>
+  <path d="M960 190 C900 190 860 250 860 320 C860 390 905 435 960 435 C1015 435 1060 390 1060 320 C1060 250 1020 190 960 190 Z" fill="#C85A17"/>
+  <path d="M960 190 C930 190 910 250 910 320 C910 390 930 435 960 435 C990 435 1010 390 1010 320 C1010 250 990 190 960 190 Z" fill="#D97230"/>
+  <path d="M952 155 C952 140 970 140 972 155 L968 195 L952 195 Z" fill="#3F624D"/>
+  <!-- Typography -->
+  <text x="100" y="160" font-family="Georgia, serif" font-size="24" fill="#C85A17" font-weight="bold">KIDS PRINTABLES · COLORING &amp; ACTIVITIES</text>
+  <text x="100" y="260" font-family="Georgia, serif" font-size="56" fill="#1E1B18" font-weight="bold">25 Easy Fall Activities</text>
+  <text x="100" y="330" font-family="Georgia, serif" font-size="56" fill="#1E1B18" font-weight="bold">for Preschoolers (Ages 3–5)</text>
+  <text x="100" y="410" font-family="sans-serif" font-size="26" fill="#5C554E">Low-prep print-and-go worksheets, fine motor tracing, counting &amp; games.</text>
+  <rect x="100" y="460" width="360" height="64" rx="12" fill="#C85A17"/>
+  <text x="142" y="500" font-family="sans-serif" font-size="22" fill="#FFFFFF" font-weight="bold">58-Page Fall Activity Pack</text>
+</svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kidsprintables.example.com/sitemap.xml

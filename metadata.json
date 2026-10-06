@@ -1,0 +1,6 @@
+{
+  "name": "Kids Printables | Coloring & Activities",
+  "description": "Low-prep preschool printables, coloring pages, and hands-on learning activities for ages 3–5. Created for parents, preschool teachers, and homeschool families.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
