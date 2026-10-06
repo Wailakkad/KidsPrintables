@@ -81,12 +81,13 @@ export default function BlogPostPage({
 
       {/* Featured Image */}
       <div className="mb-10 sm:mb-12 bg-white border border-[#E6E0D4] rounded-2xl p-3 sm:p-4">
-        <div className="overflow-hidden rounded-xl bg-[#F3EFE6] aspect-[16/9]">
+        <div className="overflow-hidden rounded-xl bg-[#F3EFE6]">
           <img
             src={post.featuredImage}
             alt="25 Easy Fall Activities for Preschoolers (Ages 3-5) — printable autumn worksheets, coloring pages, and counting games"
+            decoding="async"
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover"
+            className="block w-full h-auto max-w-full"
           />
         </div>
         <div className="pt-3 px-1 flex flex-wrap items-center justify-between gap-2 text-xs text-[#5C554E]">

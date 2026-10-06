@@ -14,13 +14,15 @@ export function PostCard({ post }: PostCardProps) {
         <Link
           href={`/blog/${post.slug}`}
           ariaLabel={`Read article: ${post.title}`}
-          className="block overflow-hidden bg-[#F3EFE6] aspect-[16/9] border-b border-[#E6E0D4]"
+          className="block overflow-hidden bg-[#F3EFE6] border-b border-[#E6E0D4]"
         >
           <img
             src={post.featuredImage}
             alt={post.title}
+            loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+            className="block w-full h-auto max-w-full transition-transform duration-200 group-hover:scale-[1.02]"
           />
         </Link>
 

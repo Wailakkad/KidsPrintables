@@ -46,9 +46,11 @@ export const FALL_ACTIVITY_PACK = {
   ageRange: 'Ages 3–5 (Preschool, Pre-K & Transitional Kindergarten)',
   format: 'Instant PDF Digital Download (US Letter & A4 compatible)',
   checkoutUrl: PAYHIP_PRODUCT_URL,
-  coverImage: '/src/assets/images/fall_activity_pack_mockup_1791289474057.jpg',
+  coverImage:
+    'https://res.cloudinary.com/dhkyla1rv/image/upload/v1791293606/Featured_Printable_Bundle_section_image.jpg',
   sampleImage: '/src/assets/images/printable_sample_preview_1791289502145.jpg',
-  heroImage: '/src/assets/images/hero_fall_printables_showcase_1791289462035.jpg',
+  heroImage:
+    'https://res.cloudinary.com/dhkyla1rv/image/upload/v1791293606/fall_hero_image.jpg',
   highlights: [
     '58 ready-to-use pages — zero prep required',
     'Designed specifically for ages 3–5 developmental milestones',
@@ -133,7 +135,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Fall Printables',
     ageRange: 'Ages 3–5',
     readTime: '8 min read',
-    featuredImage: '/src/assets/images/blog_fall_activities_featured_1791289486579.jpg',
+    featuredImage:
+      'https://res.cloudinary.com/dhkyla1rv/image/upload/v1791293663/fall_blog_cover_image.jpg',
     tags: ['Fall Printables', 'Preschool Worksheets', 'Fine Motor', 'Counting', 'Alphabet', 'Games'],
     introParagraph:
       'Welcome! If you hopped over from Pinterest looking for low-prep fall activities for preschoolers that genuinely hold a 3- to 5-year-old’s attention—without requiring an hour of craft-closet cleanup—you are in the right place. Whether you are planning a week of preschool centers, filling a morning homeschool basket, or setting up a 15-minute kitchen table activity while dinner simmers, these 25 autumn learning ideas combine hands-on play with print-and-go simplicity.',

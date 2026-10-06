@@ -84,12 +84,12 @@ export default function HomePage() {
 
           <div className="lg:col-span-6">
             <div className="bg-white border border-[#E6E0D4] rounded-2xl p-3 sm:p-4">
-              <div className="overflow-hidden rounded-xl bg-[#F3EFE6] aspect-[16/9]">
+              <div className="overflow-hidden rounded-xl bg-[#F3EFE6]">
                 <img
                   src={FALL_ACTIVITY_PACK.heroImage}
                   alt="Autumn preschool printable worksheets for counting pumpkins, tracing leaves, and fine motor activities on a birch table"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
+                  className="block w-full h-auto max-w-full"
                 />
               </div>
               <div className="pt-3 px-1 flex flex-wrap items-center justify-between gap-2 text-xs text-[#5C554E]">

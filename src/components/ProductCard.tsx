@@ -22,12 +22,12 @@ export function ProductCard({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Product Image Column */}
         <div className="lg:col-span-5">
-          <div className="relative overflow-hidden rounded-xl bg-[#F3EFE6] border border-[#E6E0D4] aspect-[4/3]">
+          <div className="relative overflow-hidden rounded-xl bg-[#F3EFE6] border border-[#E6E0D4]">
             <img
               src={FALL_ACTIVITY_PACK.coverImage}
               alt="58-page Fall Preschool Activity Pack printed sheets with crayons and autumn leaves"
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover"
+              className="block w-full h-auto max-w-full"
             />
           </div>
           <div className="mt-3 flex items-center justify-between text-xs text-[#5C554E] font-mono-tabular">
