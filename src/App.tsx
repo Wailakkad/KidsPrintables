@@ -10,6 +10,7 @@ import HomePage from '../app/page';
 import BlogIndexPage from '../app/blog/page';
 import BlogPostPage from '../app/blog/[slug]/page';
 import { SamplePreviewModal } from './components/SamplePreviewModal';
+import { EmailCapturePopup } from './components/EmailCapturePopup';
 
 function RouteSwitch() {
   const { pathname } = useRouter();
@@ -38,6 +39,7 @@ export default function App() {
         isOpen={sampleModalOpen}
         onClose={() => setSampleModalOpen(false)}
       />
+      <EmailCapturePopup />
     </RouterProvider>
   );
 }
