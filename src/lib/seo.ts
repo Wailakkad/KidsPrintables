@@ -62,6 +62,32 @@ export function buildWebsiteJsonLd(): Record<string, unknown> {
   };
 }
 
+export function buildProductJsonLd(product: {
+  name: string;
+  description: string;
+  url: string;
+  image: string;
+  price: string;
+  priceCurrency?: string;
+}): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: product.image,
+    url: product.url,
+    offers: {
+      '@type': 'Offer',
+      url: product.url,
+      price: product.price,
+      priceCurrency: product.priceCurrency ?? 'USD',
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+    },
+  };
+}
+
 export function usePageSEO(meta: PageMetadata) {
   useEffect(() => {
     document.title = meta.title;

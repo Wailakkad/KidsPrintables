@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { RouterProvider, useRouter } from './lib/router';
 import RootLayout from '../app/layout';
 import HomePage from '../app/page';
+import FallPackLandingPage from '../app/fall-preschool-activity-pack/page';
 import BlogIndexPage from '../app/blog/page';
 import BlogPostPage from '../app/blog/[slug]/page';
 import { SamplePreviewModal } from './components/SamplePreviewModal';
@@ -14,6 +15,10 @@ import { EmailCapturePopup } from './components/EmailCapturePopup';
 
 function RouteSwitch() {
   const { pathname } = useRouter();
+
+  if (pathname === '/fall-preschool-activity-pack' || pathname === '/fall-preschool-activity-pack/') {
+    return <FallPackLandingPage />;
+  }
 
   if (pathname === '/blog' || pathname === '/blog/') {
     return <BlogIndexPage />;

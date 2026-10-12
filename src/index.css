@@ -33,3 +33,14 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Keeps page content clear of the mobile sticky CTA bar on the landing page */
+body.lp-sticky-cta {
+  padding-bottom: 4.5rem;
+}
+
+@media (min-width: 640px) {
+  body.lp-sticky-cta {
+    padding-bottom: 0;
+  }
+}

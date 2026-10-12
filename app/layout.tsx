@@ -78,6 +78,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
               Blog
             </Link>
             <Link
+              href="/fall-preschool-activity-pack"
+              className={`hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap ${
+                pathname === '/fall-preschool-activity-pack'
+                  ? 'text-[#1E1B18] font-semibold underline'
+                  : ''
+              }`}
+            >
+              Fall Pack
+            </Link>
+            <Link
               href="/blog/fall-activities-for-preschoolers"
               className="hidden md:inline hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
             >
