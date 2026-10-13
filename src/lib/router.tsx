@@ -101,7 +101,11 @@ export function Link({
         href={href}
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}
-        download={href.endsWith('.pdf') ? 'Kids-Printables-Fall-Sample-Ages-3-5.pdf' : undefined}
+        download={
+          href.endsWith('.pdf')
+            ? (href.split('/').pop() || 'download.pdf').split('?')[0]
+            : undefined
+        }
         className={className}
         aria-label={ariaLabel}
         onClick={onClick}
