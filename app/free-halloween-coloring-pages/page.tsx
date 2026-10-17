@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Check,
   GraduationCap,
@@ -11,7 +11,12 @@ import {
 } from 'lucide-react';
 import { usePageSEO } from '../../src/lib/seo';
 import { CTAButton } from '../../src/components/CTAButton';
-import { AdSlot } from '../../src/components/landing/AdSlot';
+import { ProfitablerateNativeBanner } from '../../src/components/ads/ProfitablerateNativeBanner';
+import { AdPlaceholder } from '../../src/components/ads/AdPlaceholder';
+import {
+  HALLOWEEN_AD_SLOTS,
+  ProfitablerateSlot,
+} from '../../src/config/halloweenAds';
 import { MobileStickyDownload } from '../../src/components/landing/MobileStickyDownload';
 import { FaqAccordion, FaqItem } from '../../src/components/landing/FaqAccordion';
 import {
@@ -19,6 +24,29 @@ import {
   PAGES_COUNT,
   PDF_URL,
 } from '../../src/lib/halloweenLanding';
+import {
+  EmailGatedDownloadModal,
+  isHalloweenPdfUnlocked,
+} from '../../src/components/EmailGatedDownloadModal';
+
+/**
+ * Renders the Profitablerate banner when a slot is enabled in config,
+ * otherwise a reserved-height placeholder. Only used by this page.
+ */
+function HalloweenAdSlot({ slot }: { slot: ProfitablerateSlot }) {
+  return slot.enabled &&
+    slot.scriptSrc &&
+    slot.containerId &&
+    slot.scriptId ? (
+    <ProfitablerateNativeBanner
+      scriptSrc={slot.scriptSrc}
+      containerId={slot.containerId}
+      scriptId={slot.scriptId}
+    />
+  ) : (
+    <AdPlaceholder />
+  );
+}
 
 const PURPLE = '#6D4D8F';
 const PURPLE_TINT_BG = '#EFE8F6';
@@ -116,6 +144,8 @@ const SECONDARY_BTN_CLASS =
   'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-150 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A17] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF7F2] bg-white text-[#1E1B18] border border-[#D8D0C2] hover:bg-[#F3EFE6] hover:border-[#C2B8A6] active:translate-y-[1px] px-6 py-3.5 text-base min-h-[48px]';
 
 export default function FreeHalloweenColoringPagesPage() {
+  const [gatedModalOpen, setGatedModalOpen] = useState(false);
+
   usePageSEO({
     title: `Free Printable Halloween Coloring Pages for Kids (PDF, ${PAGES_COUNT} Pages)`,
     description:
@@ -128,6 +158,19 @@ export default function FreeHalloweenColoringPagesPage() {
     document.body.classList.add('lp-sticky-cta');
     return () => document.body.classList.remove('lp-sticky-cta');
   }, []);
+
+  const handleDownloadClick = () => {
+    if (isHalloweenPdfUnlocked()) {
+      const anchor = document.createElement('a');
+      anchor.href = PDF_URL;
+      anchor.download = 'Free-Halloween-Coloring-Pages-for-Kids.pdf';
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
+    } else {
+      setGatedModalOpen(true);
+    }
+  };
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -180,7 +223,7 @@ export default function FreeHalloweenColoringPagesPage() {
               id="download"
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-4 scroll-mt-24"
             >
-              <CTAButton href={PDF_URL} variant="primary" size="lg">
+              <CTAButton onClick={handleDownloadClick} variant="primary" size="lg">
                 Download Free PDF
               </CTAButton>
               <a href="#preview" className={SECONDARY_BTN_CLASS}>
@@ -194,9 +237,13 @@ export default function FreeHalloweenColoringPagesPage() {
             </p>
 
             <p className="text-xs text-[#5C554E]">
-              <a href={PDF_URL} className="font-semibold text-[#3F624D] hover:underline">
+              <button
+                type="button"
+                onClick={handleDownloadClick}
+                className="font-semibold text-[#3F624D] hover:underline"
+              >
                 Or download the PDF directly
-              </a>
+              </button>
             </p>
           </div>
 
@@ -226,7 +273,7 @@ export default function FreeHalloweenColoringPagesPage() {
 
       {/* ============ AD: after hero ============ */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-10 sm:pb-12">
-        <AdSlot slot="halloween-after-hero" format="leaderboard" />
+        <HalloweenAdSlot slot={HALLOWEEN_AD_SLOTS.top} />
       </div>
 
       {/* ============ BENEFITS ============ */}
@@ -284,7 +331,7 @@ export default function FreeHalloweenColoringPagesPage() {
             ))}
           </ul>
 
-          <CTAButton href={PDF_URL} variant="primary" size="md">
+          <CTAButton onClick={handleDownloadClick} variant="primary" size="md">
             Download Free PDF
           </CTAButton>
         </div>
@@ -329,11 +376,6 @@ export default function FreeHalloweenColoringPagesPage() {
           ))}
         </div>
       </section>
-
-      {/* ============ AD: mid-page ============ */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
-        <AdSlot slot="halloween-mid-page" format="rectangle" />
-      </div>
 
       {/* ============ GREAT FOR ============ */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
@@ -416,11 +458,6 @@ export default function FreeHalloweenColoringPagesPage() {
         </div>
       </section>
 
-      {/* ============ AD: near bottom ============ */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-14">
-        <AdSlot slot="halloween-before-faq" format="rectangle" />
-      </div>
-
       {/* ============ FAQ ============ */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
         <div className="mb-7 sm:mb-9 max-w-3xl">
@@ -445,7 +482,7 @@ export default function FreeHalloweenColoringPagesPage() {
           </h2>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-            <CTAButton href={PDF_URL} variant="primary" size="lg">
+            <CTAButton onClick={handleDownloadClick} variant="primary" size="lg">
               Download Free PDF
             </CTAButton>
           </div>
@@ -463,7 +500,11 @@ export default function FreeHalloweenColoringPagesPage() {
         </div>
       </section>
 
-      <MobileStickyDownload />
+      <MobileStickyDownload onDownloadClick={handleDownloadClick} />
+      <EmailGatedDownloadModal
+        isOpen={gatedModalOpen}
+        onClose={() => setGatedModalOpen(false)}
+      />
     </div>
   );
 }

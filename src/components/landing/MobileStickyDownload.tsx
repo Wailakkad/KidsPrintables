@@ -1,12 +1,16 @@
 import React from 'react';
 import { CTAButton } from '../CTAButton';
-import { PDF_URL, PAGES_COUNT } from '../../lib/halloweenLanding';
+import { PAGES_COUNT } from '../../lib/halloweenLanding';
 
 /**
  * Mobile-only sticky bottom download bar for the free Halloween landing page.
  * `body.lp-sticky-cta` (see src/index.css) keeps page content clear of it.
  */
-export function MobileStickyDownload() {
+export function MobileStickyDownload({
+  onDownloadClick,
+}: {
+  onDownloadClick?: () => void;
+}) {
   return (
     <div
       className="fixed inset-x-0 bottom-0 z-40 sm:hidden border-t border-[#E6E0D4] bg-white/95 backdrop-blur-xs px-4 py-2.5 shadow-[0_-4px_16px_rgba(30,27,24,0.07)]"
@@ -23,7 +27,12 @@ export function MobileStickyDownload() {
           </div>
         </div>
 
-        <CTAButton href={PDF_URL} variant="primary" size="sm" className="shrink-0">
+        <CTAButton
+          onClick={onDownloadClick}
+          variant="primary"
+          size="sm"
+          className="shrink-0"
+        >
           Download Free PDF
         </CTAButton>
       </div>

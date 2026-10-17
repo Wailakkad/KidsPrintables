@@ -3,7 +3,8 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from '../lib/router';
 
 interface CTAButtonProps {
-  href: string;
+  href?: string;
+  onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'sage';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
@@ -15,6 +16,7 @@ interface CTAButtonProps {
 
 export function CTAButton({
   href,
+  onClick,
   variant = 'primary',
   size = 'md',
   children,
@@ -41,15 +43,35 @@ export function CTAButton({
     lg: 'px-6 py-3.5 text-base min-h-[48px]',
   }[size];
 
-  return (
-    <Link
-      href={href}
-      ariaLabel={ariaLabel}
-      className={`${baseClasses} ${variantClasses} ${sizeClasses} ${className}`}
-    >
+  const content = (
+    <>
       <span>{children}</span>
       {showArrow && <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />}
       {externalIcon && <ExternalLink className="w-4 h-4 shrink-0 opacity-85" aria-hidden="true" />}
+    </>
+  );
+  const classes = `${baseClasses} ${variantClasses} ${sizeClasses} ${className}`;
+
+  if (onClick && !href) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={ariaLabel}
+        className={classes}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <Link
+      href={href ?? '#'}
+      ariaLabel={ariaLabel}
+      className={classes}
+    >
+      {content}
     </Link>
   );
 }
