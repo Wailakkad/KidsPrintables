@@ -3,6 +3,7 @@ import { X, ExternalLink } from 'lucide-react';
 import { Link, useRouter } from '../src/lib/router';
 import { PAYHIP_PRODUCT_URL, FREE_SAMPLE_PDF_URL } from '../src/lib/posts';
 import { HALLOWEEN_LANDING_PATH } from '../src/lib/halloweenLanding';
+import { HALLOWEEN_CHECKOUT_URL, HALLOWEEN_PACK_PATH } from '../src/lib/halloweenPack';
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -99,6 +100,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
               Halloween
             </Link>
             <Link
+              href={HALLOWEEN_PACK_PATH}
+              className={`hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap ${
+                pathname.replace(/\/$/, '') === HALLOWEEN_PACK_PATH
+                  ? 'text-[#1E1B18] font-semibold underline'
+                  : ''
+              }`}
+            >
+              Halloween Pack
+            </Link>
+            <Link
               href="/blog/fall-activities-for-preschoolers"
               className="hidden md:inline hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
             >
@@ -121,6 +132,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-[#C85A17] hover:bg-[#B04B0E] rounded-xl transition-colors whitespace-nowrap shrink-0"
               >
                 <span>Download Free PDF</span>
+              </a>
+            ) : pathname.replace(/\/$/, '') === HALLOWEEN_PACK_PATH ? (
+              <a
+                href={HALLOWEEN_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-[#C85A17] hover:bg-[#B04B0E] rounded-xl transition-colors whitespace-nowrap shrink-0"
+              >
+                <span>Get the Halloween Pack</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-85 shrink-0" aria-hidden="true" />
               </a>
             ) : (
               <a

@@ -8,6 +8,7 @@ import { RouterProvider, useRouter } from './lib/router';
 import RootLayout from '../app/layout';
 import HomePage from '../app/page';
 import FallPackLandingPage from '../app/fall-preschool-activity-pack/page';
+import HalloweenPackLandingPage from '../app/halloween-preschool-activity-pack/page';
 import FreeHalloweenColoringPagesPage from '../app/free-halloween-coloring-pages/page';
 import BlogIndexPage from '../app/blog/page';
 import BlogPostPage from '../app/blog/[slug]/page';
@@ -18,6 +19,13 @@ function RouteSwitch() {
 
   if (pathname === '/fall-preschool-activity-pack' || pathname === '/fall-preschool-activity-pack/') {
     return <FallPackLandingPage />;
+  }
+
+  if (
+    pathname === '/halloween-preschool-activity-pack' ||
+    pathname === '/halloween-preschool-activity-pack/'
+  ) {
+    return <HalloweenPackLandingPage />;
   }
 
   if (
