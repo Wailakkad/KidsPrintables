@@ -5,10 +5,16 @@ import { FREE_SAMPLE_PDF_URL } from '../lib/posts';
 
 interface EmailSignupFormProps {
   idPrefix: string;
-  source: 'popup' | 'newsletter';
+  /** Hidden field written to the Google Sheet so signups can be attributed. */
+  source: string;
   ctaLabel?: string;
   variant?: 'dark' | 'accent';
   successMessage?: React.ReactNode;
+  /** Optional headline for the success panel (renders a download button instead of a text link). */
+  successTitle?: string;
+  successDownloadUrl?: string;
+  successDownloadLabel?: string;
+  successDownloadName?: string;
   onSubmitted?: () => void;
 }
 
@@ -18,6 +24,10 @@ export function EmailSignupForm({
   ctaLabel = 'Send Free Printables',
   variant = 'dark',
   successMessage,
+  successTitle,
+  successDownloadUrl,
+  successDownloadLabel,
+  successDownloadName,
   onSubmitted,
 }: EmailSignupFormProps) {
   const [email, setEmail] = useState('');
@@ -66,6 +76,36 @@ export function EmailSignupForm({
   };
 
   if (status === 'success') {
+    const downloadHref = successDownloadUrl ?? FREE_SAMPLE_PDF_URL;
+    const downloadName = successDownloadName ?? 'Kids-Printables-Fall-Sample-Ages-3-5.pdf';
+    const downloadLabel = successDownloadLabel ?? 'Download the free 3-page sample PDF →';
+
+    if (successTitle) {
+      return (
+        <div
+          role="status"
+          className="bg-white border border-[#3F624D]/30 rounded-2xl p-5 sm:p-6"
+        >
+          <div className="flex items-start gap-3">
+            <Check className="w-5 h-5 text-[#3F624D] shrink-0 mt-1" aria-hidden="true" />
+            <div className="min-w-0">
+              <p className="font-display text-lg sm:text-xl font-semibold text-[#1E1B18] mb-1.5">
+                {successTitle}
+              </p>
+              <p className="text-sm text-[#5C554E] leading-relaxed mb-4">{successMessage}</p>
+              <a
+                href={downloadHref}
+                download={downloadName}
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-[#3F624D] text-white hover:bg-[#32503E] transition-colors min-h-[44px] whitespace-nowrap"
+              >
+                {downloadLabel}
+              </a>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div
         role="status"
@@ -80,11 +120,11 @@ export function EmailSignupForm({
             </>
           )}
           <a
-            href={FREE_SAMPLE_PDF_URL}
-            download="Kids-Printables-Fall-Sample-Ages-3-5.pdf"
+            href={downloadHref}
+            download={downloadName}
             className="block mt-1.5 font-semibold text-[#C85A17] hover:underline"
           >
-            Download the free 3-page sample PDF →
+            {downloadLabel}
           </a>
         </span>
       </div>

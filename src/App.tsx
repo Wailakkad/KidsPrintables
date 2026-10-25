@@ -10,6 +10,9 @@ import HomePage from '../app/page';
 import FallPackLandingPage from '../app/fall-preschool-activity-pack/page';
 import HalloweenPackLandingPage from '../app/halloween-preschool-activity-pack/page';
 import FreeHalloweenColoringPagesPage from '../app/free-halloween-coloring-pages/page';
+import FreeChristmasCraftsPackPage from '../app/free-christmas-crafts-pack/page';
+import StorePage from '../app/store/page';
+import FreePrintablesPage from '../app/free-printables/page';
 import BlogIndexPage from '../app/blog/page';
 import BlogPostPage from '../app/blog/[slug]/page';
 import { SamplePreviewModal } from './components/SamplePreviewModal';
@@ -33,6 +36,21 @@ function RouteSwitch() {
     pathname === '/free-halloween-coloring-pages/'
   ) {
     return <FreeHalloweenColoringPagesPage />;
+  }
+
+  if (
+    pathname === '/free-christmas-crafts-pack' ||
+    pathname === '/free-christmas-crafts-pack/'
+  ) {
+    return <FreeChristmasCraftsPackPage />;
+  }
+
+  if (pathname === '/store' || pathname === '/store/') {
+    return <StorePage />;
+  }
+
+  if (pathname === '/free-printables' || pathname === '/free-printables/') {
+    return <FreePrintablesPage />;
   }
 
   if (pathname === '/blog' || pathname === '/blog/') {

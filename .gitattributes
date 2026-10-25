@@ -1,0 +1,2 @@
+# PDFs are binary: never run LF/CRLF conversion on them (it corrupts xref offsets).
+*.pdf binary

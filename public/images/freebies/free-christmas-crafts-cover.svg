@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Free Christmas Crafts Starter Pack cover: a Christmas tree, snowman and gift box">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFDF8" />
+      <stop offset="1" stop-color="#F1EBDF" />
+    </linearGradient>
+    <g id="flake">
+      <line x1="0" y1="-16" x2="0" y2="16" />
+      <line x1="-14" y1="-8" x2="14" y2="8" />
+      <line x1="-14" y1="8" x2="14" y2="-8" />
+    </g>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)" />
+
+  <!-- Decorative snowflakes -->
+  <g stroke="#C9D6CE" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85">
+    <use href="#flake" xlink:href="#flake" transform="translate(120,150)" />
+    <use href="#flake" xlink:href="#flake" transform="translate(1085,175)" />
+    <use href="#flake" xlink:href="#flake" transform="translate(175,430)" />
+    <use href="#flake" xlink:href="#flake" transform="translate(1035,455)" />
+    <use href="#flake" xlink:href="#flake" transform="translate(95,600)" />
+    <use href="#flake" xlink:href="#flake" transform="translate(1110,635)" />
+    <use href="#flake" xlink:href="#flake" transform="translate(760,120)" />
+    <use href="#flake" xlink:href="#flake" transform="translate(430,95)" />
+  </g>
+
+  <!-- Badge -->
+  <rect x="400" y="86" width="400" height="48" rx="24" fill="#3F624D" />
+  <text x="600" y="117" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" font-weight="600" letter-spacing="2" fill="#FFFFFF">FREE PRINTABLE PDF · AGES 3–5</text>
+
+  <!-- Title -->
+  <text x="600" y="252" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="600" fill="#1E1B18">Free Christmas Crafts</text>
+  <text x="600" y="342" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="600" fill="#3F624D">Starter Pack</text>
+  <text x="600" y="404" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="29" fill="#5C554E">Coloring pages, a build-a-tree craft &amp; gift tags</text>
+
+  <!-- Ground -->
+  <line x1="120" y1="814" x2="1080" y2="814" stroke="#E6E0D4" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Christmas tree -->
+  <g>
+    <rect x="278" y="786" width="24" height="28" fill="#8A6A4F" />
+    <polygon points="290,672 176,792 404,792" fill="#35543F" />
+    <polygon points="290,596 198,708 382,708" fill="#3F624D" />
+    <polygon points="290,520 224,632 356,632" fill="#4A7359" />
+    <path d="M290,470 L296.5,487.1 L314.7,488 L300.5,499.4 L305.3,517 L290,507 L274.7,517 L279.5,499.4 L265.3,488 L283.5,487.1 Z" fill="#D99B26" />
+    <g>
+      <circle cx="245" cy="690" r="9" fill="#B3453C" />
+      <circle cx="340" cy="700" r="9" fill="#D99B26" />
+      <circle cx="290" cy="748" r="9" fill="#B3453C" />
+      <circle cx="232" cy="764" r="9" fill="#D99B26" />
+      <circle cx="265" cy="662" r="8" fill="#B3453C" />
+      <circle cx="320" cy="664" r="8" fill="#D99B26" />
+      <circle cx="290" cy="610" r="8" fill="#B3453C" />
+    </g>
+  </g>
+
+  <!-- Snowman -->
+  <g>
+    <line x1="548" y1="742" x2="494" y2="714" stroke="#8A6A4F" stroke-width="6" stroke-linecap="round" />
+    <line x1="652" y1="742" x2="706" y2="714" stroke="#8A6A4F" stroke-width="6" stroke-linecap="round" />
+    <circle cx="600" cy="752" r="60" fill="#FFFFFF" stroke="#D8D0C2" stroke-width="3" />
+    <circle cx="600" cy="654" r="44" fill="#FFFFFF" stroke="#D8D0C2" stroke-width="3" />
+    <rect x="556" y="604" width="88" height="10" rx="5" fill="#1E1B18" />
+    <rect x="570" y="560" width="60" height="46" rx="5" fill="#1E1B18" />
+    <circle cx="586" cy="648" r="5" fill="#1E1B18" />
+    <circle cx="614" cy="648" r="5" fill="#1E1B18" />
+    <polygon points="600,660 642,668 600,676" fill="#C85A17" />
+    <circle cx="588" cy="682" r="3" fill="#1E1B18" />
+    <circle cx="600" cy="686" r="3" fill="#1E1B18" />
+    <circle cx="612" cy="682" r="3" fill="#1E1B18" />
+    <rect x="564" y="694" width="72" height="16" rx="8" fill="#B3453C" />
+    <rect x="626" y="706" width="16" height="46" rx="6" fill="#B3453C" />
+    <circle cx="600" cy="736" r="6" fill="#1E1B18" />
+    <circle cx="600" cy="762" r="6" fill="#1E1B18" />
+    <circle cx="600" cy="788" r="6" fill="#1E1B18" />
+  </g>
+
+  <!-- Gift box -->
+  <g>
+    <rect x="840" y="704" width="140" height="110" fill="#B3453C" />
+    <rect x="898" y="704" width="24" height="110" fill="#D99B26" />
+    <rect x="840" y="750" width="140" height="22" fill="#D99B26" />
+    <rect x="830" y="679" width="160" height="30" rx="6" fill="#9E382F" />
+    <rect x="898" y="679" width="24" height="30" fill="#D99B26" />
+    <ellipse cx="884" cy="668" rx="28" ry="18" fill="#D99B26" transform="rotate(-18 884 668)" />
+    <ellipse cx="936" cy="668" rx="28" ry="18" fill="#D99B26" transform="rotate(18 936 668)" />
+    <circle cx="910" cy="672" r="12" fill="#C77F1B" />
+  </g>
+
+  <!-- Caption -->
+  <text x="600" y="866" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="23" fill="#8A8178">6 free print-and-go pages · US Letter PDF · Ages 3–5</text>
+</svg>

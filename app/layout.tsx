@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { X, ExternalLink } from 'lucide-react';
 import { Link, useRouter } from '../src/lib/router';
 import { PAYHIP_PRODUCT_URL, FREE_SAMPLE_PDF_URL } from '../src/lib/posts';
-import { HALLOWEEN_LANDING_PATH } from '../src/lib/halloweenLanding';
-import { HALLOWEEN_CHECKOUT_URL, HALLOWEEN_PACK_PATH } from '../src/lib/halloweenPack';
 
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  const { pathname, openSampleModal } = useRouter();
+  const { pathname } = useRouter();
   const [showAnnouncement, setShowAnnouncement] = useState(true);
 
   return (
@@ -56,13 +54,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
           {/* Zone 1: Single text element wordmark */}
           <Link
             href="/"
-            className="font-display text-lg sm:text-xl font-semibold tracking-tight text-[#1E1B18] whitespace-nowrap"
+            className="font-display text-lg sm:text-xl font-semibold tracking-tight text-[#1E1B18] whitespace-nowrap shrink-0"
           >
             Kids Printables
           </Link>
 
           {/* Zone 2: Clean text navigation links */}
-          <nav aria-label="Primary navigation" className="flex items-center gap-5 sm:gap-7 text-sm font-medium text-[#5C554E]">
+          <nav
+            aria-label="Primary navigation"
+            className="nav-scroll flex items-center gap-4 sm:gap-5 md:gap-7 min-w-0 overflow-x-auto text-sm font-medium text-[#5C554E]"
+          >
             <Link
               href="/"
               className={`hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap ${
@@ -80,80 +81,35 @@ export default function RootLayout({ children }: RootLayoutProps) {
               Blog
             </Link>
             <Link
-              href="/fall-preschool-activity-pack"
+              href="/store"
               className={`hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap ${
-                pathname === '/fall-preschool-activity-pack'
+                pathname.replace(/\/$/, '') === '/store'
                   ? 'text-[#1E1B18] font-semibold underline'
                   : ''
               }`}
             >
-              Fall Pack
+              Store
             </Link>
             <Link
-              href={HALLOWEEN_LANDING_PATH}
+              href="/free-printables"
               className={`hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap ${
-                pathname.replace(/\/$/, '') === HALLOWEEN_LANDING_PATH
+                pathname.replace(/\/$/, '') === '/free-printables'
                   ? 'text-[#1E1B18] font-semibold underline'
                   : ''
               }`}
             >
-              Halloween
+              Free Printables
             </Link>
-            <Link
-              href={HALLOWEEN_PACK_PATH}
-              className={`hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap ${
-                pathname.replace(/\/$/, '') === HALLOWEEN_PACK_PATH
-                  ? 'text-[#1E1B18] font-semibold underline'
-                  : ''
-              }`}
-            >
-              Halloween Pack
-            </Link>
-            <Link
-              href="/blog/fall-activities-for-preschoolers"
-              className="hidden md:inline hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
-            >
-              25 Fall Activities
-            </Link>
-            <button
-              type="button"
-              onClick={openSampleModal}
-              className="hidden sm:inline hover:text-[#1E1B18] hover:underline underline-offset-4 transition-colors whitespace-nowrap cursor-pointer"
-            >
-              Free Sample
-            </button>
           </nav>
 
           {/* Zone 3: Single primary action */}
           <div className="flex items-center">
-            {pathname.replace(/\/$/, '') === HALLOWEEN_LANDING_PATH ? (
-              <a
-                href="#download"
-                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-[#C85A17] hover:bg-[#B04B0E] rounded-xl transition-colors whitespace-nowrap shrink-0"
-              >
-                <span>Download Free PDF</span>
-              </a>
-            ) : pathname.replace(/\/$/, '') === HALLOWEEN_PACK_PATH ? (
-              <a
-                href={HALLOWEEN_CHECKOUT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-[#C85A17] hover:bg-[#B04B0E] rounded-xl transition-colors whitespace-nowrap shrink-0"
-              >
-                <span>Get the Halloween Pack</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-85 shrink-0" aria-hidden="true" />
-              </a>
-            ) : (
-              <a
-                href={PAYHIP_PRODUCT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-[#C85A17] hover:bg-[#B04B0E] rounded-xl transition-colors whitespace-nowrap shrink-0"
-              >
-                <span>Get the Fall Pack</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-85 shrink-0" aria-hidden="true" />
-              </a>
-            )}
+            <Link
+              href="/store"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-[#C85A17] hover:bg-[#B04B0E] rounded-xl transition-colors whitespace-nowrap shrink-0"
+            >
+              <span>Shop Printables</span>
+            </Link>
           </div>
         </div>
       </header>
@@ -189,6 +145,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <li>
                   <Link href="/blog" className="hover:text-[#1E1B18] transition-colors">
                     Blog Index
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/store" className="hover:text-[#1E1B18] transition-colors">
+                    Printables Shop
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/free-printables" className="hover:text-[#1E1B18] transition-colors">
+                    Free Printables Library
                   </Link>
                 </li>
                 <li>
