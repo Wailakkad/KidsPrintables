@@ -28,6 +28,11 @@ export interface Product {
   /** Cover image already used on the product landing page. */
   image: string;
   alt: string;
+  /**
+   * CSS aspect-ratio for the card image, e.g. "1792 / 2400" for portrait covers.
+   * Defaults to "4 / 3" when omitted.
+   */
+  imageAspect?: string;
   /** Card button label (defaults per grid: "View Details" / "Get Free Download"). */
   ctaLabel?: string;
 }
@@ -87,7 +92,8 @@ export const freeProducts: Product[] = [
     badge: 'New',
     tags: ['Christmas', 'Crafts', '6 Pages'],
     image: CHRISTMAS_COVER_IMAGE,
-    alt: 'Free Christmas Crafts Starter Pack cover with a Christmas tree, snowman and wrapped gift',
+    alt: 'Parent and preschooler doing the free Christmas printables together at a table',
+    imageAspect: '1792 / 2400',
   },
   {
     slug: 'free-fall-printable-sample',

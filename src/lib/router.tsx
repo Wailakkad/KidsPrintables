@@ -84,12 +84,14 @@ export function Link({
   className = '',
   ariaLabel,
   onClick,
+  style,
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
   ariaLabel?: string;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }) {
   const { navigate } = useRouter();
   const isExternal = href.startsWith('http://') || href.startsWith('https://');
@@ -109,6 +111,7 @@ export function Link({
         className={className}
         aria-label={ariaLabel}
         onClick={onClick}
+        style={style}
       >
         {children}
       </a>
@@ -120,6 +123,7 @@ export function Link({
       href={href}
       aria-label={ariaLabel}
       className={className}
+      style={style}
       onClick={(e) => {
         e.preventDefault();
         if (onClick) onClick();

@@ -21,7 +21,8 @@ export function ProductGridCard({ product, variant = 'paid' }: ProductGridCardPr
       <Link
         href={product.href}
         ariaLabel={`View ${product.title}`}
-        className="relative block aspect-[4/3] overflow-hidden bg-[#F3EFE6] border-b border-[#E6E0D4]"
+        className="relative block overflow-hidden bg-[#F3EFE6] border-b border-[#E6E0D4]"
+        style={{ aspectRatio: product.imageAspect ?? '4 / 3' }}
       >
         <img
           src={product.image}

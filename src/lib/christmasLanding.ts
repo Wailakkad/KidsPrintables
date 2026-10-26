@@ -8,10 +8,10 @@
 export const CHRISTMAS_LANDING_PATH = '/free-christmas-crafts-pack';
 
 /** Public URL of the freebie PDF (file lives in public/downloads/). */
-export const CHRISTMAS_PDF_URL = '/downloads/free-christmas-crafts-starter-pack.pdf';
+export const CHRISTMAS_PDF_URL = '/downloads/Free-Christmas-Crafts-Starter-Pack-Ages-3-5.pdf';
 
 /** Filename used for the `download` attribute. */
-export const CHRISTMAS_PDF_FILENAME = 'Free-Christmas-Crafts-Starter-Pack.pdf';
+export const CHRISTMAS_PDF_FILENAME = 'Free-Christmas-Crafts-Starter-Pack-Ages-3-5.pdf';
 
 /**
  * Value sent as the hidden `source` field so each signup can be traced
@@ -23,4 +23,5 @@ export const CHRISTMAS_EMAIL_SOURCE = 'Free Christmas Crafts Starter Pack';
 export const CHRISTMAS_PAGES_COUNT = 6;
 
 /** Cover artwork shown in the hero card and the Free Printables hub card. */
-export const CHRISTMAS_COVER_IMAGE = '/images/freebies/free-christmas-crafts-cover.svg';
+export const CHRISTMAS_COVER_IMAGE =
+  'https://res.cloudinary.com/dhkyla1rv/image/upload/v1793002884/cover_free_chritmas.jpg';

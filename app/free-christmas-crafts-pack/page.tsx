@@ -40,16 +40,24 @@ const INSIDE_ITEMS = [
     icon: Palette,
     title: '2 cozy coloring pages',
     text: 'Snowman friends plus a Christmas tree and presents—big shapes, bold outlines, easy for small hands.',
+    image: 'https://res.cloudinary.com/dhkyla1rv/image/upload/v1793002133/2cozy_coloring_pag.jpg',
+    alt: 'Two free Christmas coloring pages: snowman friends and a Christmas tree with presents',
   },
   {
     icon: Scissors,
     title: 'Build-a-Christmas Tree craft',
     text: 'Print-and-go cut-and-paste craft with the color already added, so there is nothing extra to prep.',
+    image:
+      'https://res.cloudinary.com/dhkyla1rv/image/upload/v1793002133/Build-a-Christmas_Tree_craft.jpg',
+    alt: 'Build-a-Christmas Tree printable craft sheet with the color already added',
   },
   {
     icon: Gift,
     title: 'Gift tags, stickers & mini cards',
     text: 'Little things kids can make themselves and hand to family, friends, and teachers.',
+    image:
+      'https://res.cloudinary.com/dhkyla1rv/image/upload/v1793002132/Gift_tags_stickers_mini_cards.jpg',
+    alt: 'Printable Christmas gift tags, stickers, and mini cards for kids to make',
   },
 ];
 
@@ -203,12 +211,12 @@ export default function FreeChristmasCraftsPackPage() {
 
           {/* Hero cover card */}
           <div className="lg:col-span-6">
-            <div className="bg-white border border-[#E6E0D4] rounded-2xl p-3 sm:p-4 shadow-sm lg:sticky lg:top-24">
+            <div className="bg-white border border-[#E6E0D4] rounded-2xl p-3 sm:p-4 shadow-sm">
               <div className="overflow-hidden rounded-xl bg-[#F3EFE6]">
                 <img
                   src={CHRISTMAS_COVER_IMAGE}
-                  alt="Free Christmas Crafts Starter Pack cover with a Christmas tree, snowman, and wrapped gift"
-                  className="block h-auto max-w-full"
+                  alt="Parent and preschooler doing the free Christmas printables together at a table with coloring pages, a cut-out tree craft, and scissors"
+                  className="block w-full h-auto"
                 />
               </div>
               <div className="pt-3 px-1 flex flex-wrap items-center justify-between gap-2 text-xs text-[#5C554E] font-mono-tabular">
@@ -243,22 +251,36 @@ export default function FreeChristmasCraftsPackPage() {
           {INSIDE_ITEMS.map((item) => (
             <li
               key={item.title}
-              className="bg-white border border-[#E6E0D4] rounded-2xl p-5 sm:p-6 shadow-sm"
+              className="bg-white border border-[#E6E0D4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
             >
-              <span
-                className="inline-flex items-center justify-center w-9 h-9 rounded-lg mb-3"
-                style={{ backgroundColor: ACCENT_TINT_BG }}
-              >
-                <item.icon
-                  className="w-[18px] h-[18px]"
-                  style={{ color: ACCENT }}
-                  aria-hidden="true"
+              {/* Every preview uses the source ratio (1792×2400) so all cards stay the same size */}
+              <div className="aspect-[1792/2400] overflow-hidden bg-[#F3EFE6] border-b border-[#E6E0D4]">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="block w-full h-full object-cover"
                 />
-              </span>
-              <h3 className="font-display text-lg font-semibold text-[#1E1B18] mb-1.5">
-                {item.title}
-              </h3>
-              <p className="text-sm text-[#5C554E] leading-relaxed">{item.text}</p>
+              </div>
+
+              <div className="p-5 sm:p-6 flex flex-col">
+                <span
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-lg mb-3"
+                  style={{ backgroundColor: ACCENT_TINT_BG }}
+                >
+                  <item.icon
+                    className="w-[18px] h-[18px]"
+                    style={{ color: ACCENT }}
+                    aria-hidden="true"
+                  />
+                </span>
+                <h3 className="font-display text-lg font-semibold text-[#1E1B18] mb-1.5">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#5C554E] leading-relaxed">{item.text}</p>
+              </div>
             </li>
           ))}
         </ul>
